@@ -1,16 +1,16 @@
-def update_dictionary(d, key, value):
-    if (key in d) == 'true':
-        d[key].append(value)
-    elif (2*key in d) == 'true':
-        d[key].append(value)
-    else:
-        d[key*2] = [value]
-
-
-d = {}
-print(update_dictionary(d, 1, -1))  # None
-print(d)                            # {2: [-1]}
-update_dictionary(d, 2, -2)
-print(d)                            # {2: [-1, -2]}
-update_dictionary(d, 1, -3)
-print(d)                            # {2: [-1, -2, -3]}
+with open('dataset_3363_2 (2).txt') as inf:
+    s = inf.readline().lower().strip()
+result = ''
+n = ''
+buk=''
+for i in range(len(s)):
+    if s[i].isalpha():
+        buk = s[i]
+    elif s[i].isdigit():
+        n += s[i]
+        if i==len(s)-1 or s[i+1].isalpha():
+            result += buk*(int(n))
+            n = ''
+print(result)
+with open('result.txt','w') as ouf:
+    ouf.write(str(result))
