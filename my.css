@@ -150,7 +150,7 @@ select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background: url("../img/arrow.svg") 96% / 8% no-repeat #3B3B3B;
+    background: url("img/arrow.svg") 96% / 8% no-repeat #3B3B3B;
 
 }
 .footer2>a {
@@ -248,18 +248,18 @@ select {
 .hero_bg {
     width: 100%;
     height: 364px;
-    background: url('../img/push/fonxs.png');
+    background: url('img/push/fonxs.png');
     background-size: cover;
 }
 @media (min-width: 768px) { /*tablet*/
     .hero_bg {
-        background: url('../img/push/fonmd.png');
+        background: url('img/push/fonmd.png');
         background-size: cover;
     }
 }
 @media (min-width: 1200px) { /*desktop*/
     .hero_bg {
-        background: url('../img/push/fonxl.png');
+        background: url('img/push/fonxl.png');
         background-size: cover;
     }
 }
