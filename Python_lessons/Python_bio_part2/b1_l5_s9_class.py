@@ -11,7 +11,6 @@ class Buffer:
                 clearbuf += self.buff[0]
                 self.buff.pop(0)
             print(clearbuf)
-
         # добавить следующую часть последовательности
 
     def get_current_part(self):
