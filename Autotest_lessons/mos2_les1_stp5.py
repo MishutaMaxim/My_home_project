@@ -1,28 +1,31 @@
 from selenium import webdriver
 import time
 import math
+from selenium.webdriver.common.by import By
 
-def calc(x):
-  return str(math.log(abs(12*math.sin(int(x)))))
+
+def calc(number):
+    return str(math.log(abs(12 * math.sin(int(number)))))
+
 
 try:
     browser = webdriver.Chrome()
     browser.get("http://suninjuly.github.io/math.html")
 
     # Считаем выражение и подставляем в поле
-    x_element = browser.find_element_by_id('input_value')
+    x_element = browser.find_element(By.ID, 'input_value')
     x = x_element.text
     y = calc(x)
-    browser.find_element_by_id('answer').send_keys(y)
+    browser.find_element(By.ID, 'answer').send_keys(y)
 
     # Отмечаем чекбокс
-    browser.find_element_by_id('robotCheckbox').click()
+    browser.find_element(By.ID, 'robotCheckbox').click()
 
     # Отмечаем радио
-    browser.find_element_by_id('robotsRule').click()
+    browser.find_element(By.ID, 'robotsRule').click()
 
     # Отправляем заполненную форму
-    button = browser.find_element_by_class_name('btn')
+    button = browser.find_element(By.CLASS_NAME, 'btn')
     button.click()
 
     # Проверяем, что смогли зарегистрироваться

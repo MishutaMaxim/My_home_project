@@ -1,20 +1,22 @@
 from selenium import webdriver
 import time
 
+from selenium.webdriver.common.by import By
+
 try:
     link = "http://suninjuly.github.io/registration1.html"
     browser = webdriver.Chrome()
     browser.get(link)
 
     # Ваш код, который заполняет обязательные поля
-    browser.find_element_by_css_selector('[placeholder="Input your first name"]').send_keys('Vladimir')
-    browser.find_element_by_css_selector('.first_block > .second_class > input').send_keys('Putin')
-    browser.find_element_by_css_selector('.first_block > .third_class > input').send_keys('vova@molodec.ru')
-    browser.find_element_by_css_selector('.first_block > .third_class > input').send_keys('111')
-    browser.find_element_by_css_selector('.second_block > .second_class > input').send_keys('Kremlin')
+    browser.find_element(By.CSS_SELECTOR, '[placeholder="Input your first name"]').send_keys('Vladimir')
+    browser.find_element(By.CSS_SELECTOR, '.first_block > .second_class > input').send_keys('Putin')
+    browser.find_element(By.CSS_SELECTOR, '.first_block > .third_class > input').send_keys('vova@molodec.ru')
+    browser.find_element(By.CSS_SELECTOR, '.first_block > .third_class > input').send_keys('111')
+    browser.find_element(By.CSS_SELECTOR, '.second_block > .second_class > input').send_keys('Kremlin')
 
     # Отправляем заполненную форму
-    button = browser.find_element_by_css_selector("button.btn")
+    button = browser.find_element(By.CSS_SELECTOR, "button.btn")
     button.click()
 
     # Проверяем, что смогли зарегистрироваться
@@ -22,7 +24,7 @@ try:
     time.sleep(1)
 
     # находим элемент, содержащий текст
-    welcome_text_elt = browser.find_element_by_tag_name("h1")
+    welcome_text_elt = browser.find_element(By.TAG_NAME, "h1")
     # записываем в переменную welcome_text текст из элемента welcome_text_elt
     welcome_text = welcome_text_elt.text
 

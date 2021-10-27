@@ -1,8 +1,9 @@
 import unittest
 from selenium import webdriver
 import time
-import warnings
-warnings.filterwarnings("ignore")
+
+from selenium.webdriver.common.by import By
+
 
 class Test_registration(unittest.TestCase):
     def test_registration1(self):
@@ -11,14 +12,14 @@ class Test_registration(unittest.TestCase):
         browser.get(link)
 
         # Ваш код, который заполняет обязательные поля
-        browser.find_element_by_css_selector('[placeholder="Input your first name"]').send_keys('Vladimir')
-        browser.find_element_by_css_selector('[placeholder="Input your last name"]').send_keys('Putin')
-        browser.find_element_by_css_selector('[placeholder="Input your email"]').send_keys('vova@molodec.ru')
-        browser.find_element_by_css_selector('[placeholder="Input your phone:"]').send_keys('111')
-        browser.find_element_by_css_selector('[placeholder="Input your address:"]').send_keys('Kremlin')
+        browser.find_element(By.CSS_SELECTOR, '[placeholder="Input your first name"]').send_keys('Vladimir')
+        browser.find_element(By.CSS_SELECTOR, '[placeholder="Input your last name"]').send_keys('Putin')
+        browser.find_element(By.CSS_SELECTOR, '[placeholder="Input your email"]').send_keys('vova@molodec.ru')
+        browser.find_element(By.CSS_SELECTOR, '[placeholder="Input your phone:"]').send_keys('111')
+        browser.find_element(By.CSS_SELECTOR, '[placeholder="Input your address:"]').send_keys('Kremlin')
 
         # Отправляем заполненную форму
-        browser.find_element_by_css_selector("button.btn").click()
+        browser.find_element(By.CSS_SELECTOR, "button.btn").click()
 
         # Проверяем, что смогли зарегистрироваться
         # ждем загрузки страницы
@@ -26,7 +27,7 @@ class Test_registration(unittest.TestCase):
 
         # находим элемент, содержащий текст
         # записываем в переменную welcome_text текст
-        welcome_text = browser.find_element_by_tag_name("h1").text
+        welcome_text = browser.find_element(By.TAG_NAME, "h1").text
 
         # с помощью assert проверяем, что ожидаемый текст совпадает с текстом на странице сайта
         self.assertEqual(welcome_text, "Congratulations! You have successfully registered!", "Registration error", )
@@ -40,14 +41,14 @@ class Test_registration(unittest.TestCase):
         browser.get(link)
 
         # Ваш код, который заполняет обязательные поля
-        browser.find_element_by_css_selector('[placeholder="Input your first name"]').send_keys('Vladimir')
-        browser.find_element_by_css_selector('[placeholder="Input your last name"]').send_keys('Putin')
-        browser.find_element_by_css_selector('[placeholder="Input your email"]').send_keys('vova@molodec.ru')
-        browser.find_element_by_css_selector('[placeholder="Input your phone:"]').send_keys('111')
-        browser.find_element_by_css_selector('[placeholder="Input your address:"]').send_keys('Kremlin')
+        browser.find_element(By.CSS_SELECTOR, '[placeholder="Input your first name"]').send_keys('Vladimir')
+        browser.find_element(By.CSS_SELECTOR, '[placeholder="Input your last name"]').send_keys('Putin')
+        browser.find_element(By.CSS_SELECTOR, '[placeholder="Input your email"]').send_keys('vova@molodec.ru')
+        browser.find_element(By.CSS_SELECTOR, '[placeholder="Input your phone:"]').send_keys('111')
+        browser.find_element(By.CSS_SELECTOR, '[placeholder="Input your address:"]').send_keys('Kremlin')
 
         # Отправляем заполненную форму
-        browser.find_element_by_css_selector("button.btn").click()
+        browser.find_element(By.CSS_SELECTOR, "button.btn").click()
 
         # Проверяем, что смогли зарегистрироваться
         # ждем загрузки страницы
@@ -55,7 +56,7 @@ class Test_registration(unittest.TestCase):
 
         # находим элемент, содержащий текст
         # записываем в переменную welcome_text текст
-        welcome_text = browser.find_element_by_tag_name("h1").text
+        welcome_text = browser.find_element(By.TAG_NAME, "h1").text
 
         # с помощью assert проверяем, что ожидаемый текст совпадает с текстом на странице сайта
         self.assertEqual(welcome_text, "Congratulations! You have successfully registered!", "Registration error", )
