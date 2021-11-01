@@ -20,16 +20,18 @@ token = j["token"]
 # Программа делает api запрос
 headers = {"X-Xapp-Token" : token}
 
-result = list
+result = []
 with open('dataset_24476_4.txt') as file:
     # Читаем построчно
     for line in file:
         line = line.strip()
         # Формируем ссылку и делаем запрос
         res = requests.get(f'https://api.artsy.net/api/artists/{line}', headers=headers)
+        res.encoding = 'utf-8'
         data = res.json()
-        result.append([data['birthday'], data['sortable_name']])
-        # print(in_result)
-        # result.append(in_result)
-
-print(result)
+        in_result = str(data['birthday'] + ' ' + data['sortable_name'])
+        print(in_result)
+        result.append(in_result)
+result.sort()
+for i in result:
+    print(i[5:])
