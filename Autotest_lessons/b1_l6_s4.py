@@ -4,9 +4,9 @@ import time
 from selenium.webdriver.common.by import By
 
 link = "http://suninjuly.github.io/simple_form_find_task.html"
+browser = webdriver.Chrome()
 
 try:
-    browser = webdriver.Chrome()
     browser.get(link)
     # Заполняем форму регистрации
     input1 = browser.find_element(By.NAME, 'first_name')
@@ -26,5 +26,4 @@ finally:
     time.sleep(30)
     # закрываем браузер после всех манипуляций
     browser.quit()
-
 # не забываем оставить пустую строку в конце файла

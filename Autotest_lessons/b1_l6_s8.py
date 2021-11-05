@@ -4,9 +4,9 @@ import time
 from selenium.webdriver.common.by import By
 
 link = "http://suninjuly.github.io/find_xpath_form"
+browser = webdriver.Chrome()
 
 try:
-    browser = webdriver.Chrome()
     browser.get(link)
 
     input1 = browser.find_element(By.NAME, 'first_name')

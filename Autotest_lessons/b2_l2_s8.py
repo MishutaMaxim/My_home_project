@@ -4,8 +4,8 @@ import os
 
 from selenium.webdriver.common.by import By
 
+browser = webdriver.Chrome()
 try:
-    browser = webdriver.Chrome()
     browser.get('http://suninjuly.github.io/file_input.html')
 
     # Заполняем поля

@@ -3,8 +3,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 import time
 
+browser = webdriver.Chrome()
 try:
-    browser = webdriver.Chrome()
     browser.get("http://suninjuly.github.io/selects1.html")
 
     # Считаем выражение данное на странице

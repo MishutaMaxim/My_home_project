@@ -10,8 +10,8 @@ def calc(x):
     return str(math.log(abs(12*math.sin(int(x)))))
 
 
+browser = webdriver.Chrome()
 try:
-    browser = webdriver.Chrome()
     browser.get('http://suninjuly.github.io/explicit_wait2.html')
 
     # Дождаться, когда цена дома уменьшится до $100 (ожидание нужно установить не меньше 12 секунд)

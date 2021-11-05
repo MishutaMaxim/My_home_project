@@ -8,8 +8,8 @@ def calc(number):
     return str(math.log(abs(12 * math.sin(int(number)))))
 
 
+browser = webdriver.Chrome()
 try:
-    browser = webdriver.Chrome()
     browser.get("http://suninjuly.github.io/math.html")
 
     # Считаем выражение и подставляем в поле

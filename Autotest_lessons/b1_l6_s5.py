@@ -5,9 +5,9 @@ import math
 from selenium.webdriver.common.by import By
 
 link = "http://suninjuly.github.io/find_link_text"
+browser = webdriver.Chrome()
 
 try:
-    browser = webdriver.Chrome()
     browser.get(link)
 
     browser.find_element(By.PARTIAL_LINK_TEXT, str(math.ceil(math.pow(math.pi, math.e)*10000))).click()
