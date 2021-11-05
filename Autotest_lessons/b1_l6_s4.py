@@ -8,7 +8,7 @@ link = "http://suninjuly.github.io/simple_form_find_task.html"
 try:
     browser = webdriver.Chrome()
     browser.get(link)
-
+    # Заполняем форму регистрации
     input1 = browser.find_element(By.NAME, 'first_name')
     input1.send_keys("Ivan")
     input2 = browser.find_element(By.NAME, 'last_name')
@@ -17,6 +17,7 @@ try:
     input3.send_keys("Smolensk")
     input4 = browser.find_element(By.ID, 'country')
     input4.send_keys("Russia")
+    # Завершаем регистрацию
     button = browser.find_element(By.CSS_SELECTOR, "button.btn")
     button.click()
 
