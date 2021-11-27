@@ -25,16 +25,16 @@ print(string4.replace('а', ''))
 
 # Написать произвольную анкеты, и вывести полученные данные
 
-# first_name = input('Введите имя: ')
-# last_name = input('Введите фамилию: ')
-# age = input('Введите возраст: ')
-# sex = input('Введите пол: ')
-# spec = input('Введите специальность: ')
-# print('Имя: ', first_name)
-# print('Фамилия: ', last_name)
-# print('Специальность: ', spec)
-# print('Возраст: ', age)
-# print('Пол: ', sex)
+first_name = input('Введите имя: ')
+last_name = input('Введите фамилию: ')
+age = input('Введите возраст: ')
+sex = input('Введите пол: ')
+spec = input('Введите специальность: ')
+print('Имя: ', first_name)
+print('Фамилия: ', last_name)
+print('Специальность: ', spec)
+print('Возраст: ', age)
+print('Пол: ', sex)
 
 # Проверить, что номера телефонов состоят только из цифр. Они могут начинаться с «+»,
 # цифры могут быть разделены пробелами и дефисами «-»
@@ -55,7 +55,7 @@ print(string7.count(' ') + 1)
 # Выделите из этой строки имя файла без расширения
 
 file_path = r'C:\development\inside\test-project_management\inside\myfile.txt'
-start = file_path.rfind('\\')+1
-end = file_path.rfind('.')
-file_name = file_path[start:end]
+start = file_path.rfind('\\')+1     # Ищем начало имени файла
+end = file_path.rfind('.')          # Ищем конец имени файла
+file_name = file_path[start:end]    # Слайсом отрезаем лишнее
 print(file_name)
