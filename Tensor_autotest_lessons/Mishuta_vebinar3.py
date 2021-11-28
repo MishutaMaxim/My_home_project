@@ -3,7 +3,7 @@
 
 def cash(deposit, persent, years):
     for i in range(years):
-        deposit = deposit + deposit * (persent / 100)
+        deposit += deposit * (persent / 100)
     return deposit
 
 
