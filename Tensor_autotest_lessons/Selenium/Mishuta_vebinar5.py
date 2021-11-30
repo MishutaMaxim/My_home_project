@@ -32,6 +32,8 @@ def chek_download_links():
         driver.quit()
 
 
+# chek_download_links()
+
 # 1. Сосчитать сколько в каталоге установки python:
 # папок
 # файлов с расширением ".py"
@@ -40,9 +42,10 @@ def chek_download_links():
 # 2. Записать результаты в файл
 def file_counter():
     import os
+    import sys
+    home = os.path.dirname(sys.executable)
+    os.chdir(home)
     print(os.getcwd())
-    print(os.environ, sep='\n')
-    os.chdir(os.environ['PYTHONPATH'])
 
 
 file_counter()
