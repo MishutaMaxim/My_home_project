@@ -9,8 +9,8 @@ def chek_download_links():
     try:
         # Ссылка и локаторы
         link = 'https://sbis.ru/'
-        support_locator = (By.XPATH, "//a[starts-with(@href, '/support')]")
-        downloads_locator = (By.XPATH, "//a[starts-with(@href, '/download')]")
+        support_locator = (By.CSS_SELECTOR, "a[href='/support']")
+        downloads_locator = (By.CSS_SELECTOR, "a[href='/download']")
         downloads_link = (By.CSS_SELECTOR, ".sbis_ru-DownloadNew-loadLink a")
         download_links = []
         # Открываем линк, переходим в поддержку, переходим в скачать
@@ -32,7 +32,8 @@ def chek_download_links():
         driver.quit()
 
 
-# chek_download_links()
+chek_download_links()
+
 
 # 1. Сосчитать сколько в каталоге установки python:
 # папок
