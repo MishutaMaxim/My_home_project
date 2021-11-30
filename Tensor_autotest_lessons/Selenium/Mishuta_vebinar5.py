@@ -43,9 +43,27 @@ def chek_download_links():
 def file_counter():
     import os
     import sys
-    home = os.path.dirname(sys.executable)
-    os.chdir(home)
+    start_path = os.getcwd()
+    path = os.path.dirname(sys.executable)
+    os.chdir(path)
     print(os.getcwd())
+    dir_count, py_count, exe_count, file_count = 0, 0, 0, 0
+    for root, dirs, files in os.walk(path):
+        for _dir in dirs:
+            dir_count += 1
+        for _file in files:
+            file_count += 1
+            if _file[-3:] == '.py':
+                py_count += 1
+            if _file[-4:] == '.exe':
+                exe_count += 1
+    os.chdir(start_path)
+    with open('vebinar5_file_counter.txt', 'w', encoding="utf-8") as file:
+        file.write('В каталоге - ' + path + '\n')
+        file.write('Папок - ' + str(dir_count) + '\n')
+        file.write('Файлов с расширением ".py" - ' + str(py_count) + '\n')
+        file.write('Файлов с расширением ".exe" - ' + str(exe_count) + '\n')
+        file.write('Всего файлов - ' + str(file_count) + '\n')
 
 
 file_counter()
