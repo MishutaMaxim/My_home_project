@@ -8,11 +8,12 @@
 
 from atf import run_tests
 from atf.ui import *
-from ..pages.notespage import NotesPage
-from ..pages.authpage import AuthPage
+from pages.notespage import NotesPage
+from pages.authpage import AuthPage
+import time
 
 
-class Test_Note(TestCaseUI):
+class TestNote(TestCaseUI):
 
     @classmethod
     def setup_class(cls):
@@ -23,7 +24,7 @@ class Test_Note(TestCaseUI):
         NotesPage(self.driver).NOTE_NEW_BUTTON.should_be(Displayed, wait_time=5)
 
     def test_01_notes(self):
-        note_test_message = 'Это новая заметка'
+        note_test_message = 'Это новая заметка! Время создания: ' + str(time.time())
         NotesPage(self.driver).new_note(note_test_message)
         NotesPage(self.driver).find_note(note_test_message)
         NotesPage(self.driver).delete_note(note_test_message)

@@ -14,6 +14,7 @@ def chek_download_links():
         downloads_link = (By.CSS_SELECTOR, ".sbis_ru-DownloadNew-loadLink a")
         download_links = []
         # Открываем линк, переходим в поддержку, переходим в скачать
+        driver.implicitly_wait(5)
         driver.get(link)
         driver.find_element(*support_locator).click()
         driver.find_element(*downloads_locator).click()
@@ -31,8 +32,6 @@ def chek_download_links():
     finally:
         driver.quit()
 
-
-chek_download_links()
 
 
 # 1. Сосчитать сколько в каталоге установки python:
