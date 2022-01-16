@@ -1,0 +1,5 @@
+В каталоге - C:\Users\mv.mishuta\AppData\Local\Programs\Python\Python39
+Папок - 501
+Файлов с расширением ".py" - 2436
+Файлов с расширением ".exe" - 28
+Всего файлов - 5274

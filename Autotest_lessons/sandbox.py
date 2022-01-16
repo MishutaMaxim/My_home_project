@@ -1,6 +1,7 @@
-from selenium import webdriver
+import datetime
 
-# инициализируем драйвер браузера. После этой команды вы должны увидеть новое открытое окно браузера
-driver = webdriver.Firefox()
+today = datetime.date(2002, 12, 31)
+print(today)
+print(today.month)
 
-driver.get("https://stepik.org/lesson/25969/step/8")
+print(today.replace(month=2))
