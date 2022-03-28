@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../../../StarcraftII_parcer/.idea/StarcraftII_parcer.iml" filepath="$PROJECT_DIR$/../../../../StarcraftII_parcer/.idea/StarcraftII_parcer.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../../autotests/.idea/autotests.iml" filepath="$PROJECT_DIR$/../../../../autotests/.idea/autotests.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/pythonProject.iml" filepath="$PROJECT_DIR$/.idea/pythonProject.iml" />
     </modules>
