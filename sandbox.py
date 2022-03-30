@@ -1,24 +1,9 @@
-import threading
-from threading import Thread, Lock
-from time import sleep
+def rotate(nums: list[int], k: int) -> None:
 
-result = []
-value = 0
-locker = threading.Lock()
 
-def add_value():
-    global result
-    global value
-    while True:
-        locker.acquire()
-        result.append(value)
-        value += 1
-        print(result)
-        locker.release()
-        sleep(4)
 
-for _ in range(5):
-    th = threading.Thread(target=add_value)
-    th.start()
+mass = [1, 2, 3, 4, 5, 6, 7]
+k = 3
 
-th.join()
+print(mass)
+print(rotate(mass, k))

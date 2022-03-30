@@ -4,6 +4,7 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/Tensor_autotest_lessons/Vebinar6" isTestSource="false" />
     </content>
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="autotests" />
     <orderEntry type="module" module-name="StarcraftII_parcer" />
